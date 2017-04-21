@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Net Paint</title>
+<link href="styles.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div id="container">
+		<div id="loggedIn">Logged in as:</div>
+		<div id="canvasDiv">
+			<canvas id="canvas"></canvas>
+		</div>
+		<div id="tools">
+			<div id="shapePicker">
+				<p>Pick a shape</p>
+				<input type="button" value="Square"> <input type="button"
+					value="Circle"> <input type="button" value="Line">
+			</div>
+			<div id="colorPicker">
+				<p>Pick a color</p>
+				<input type="color">
+			</div>
+			<div id="or">
+				--OR--
+				<div id="imagePicker">
+					<p>Pick an image</p>
+					<input type="button" value="Doge"> <input type="button"
+						value="Take my mo.."> <input type="button" value="Custom">
+				</div>
+			</div>
+		</div>
+		<div id="chatBox"></div>
+		<div id="textInputDiv">
+			<input type="text" id="textInput" /> <input type="button"
+				id="submitTextInput" value="Send" />
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+#container {
+	width: 1000px;
+	margin: auto;
+}
+#loginDialog{
+	margin: auto;
+	margin-top: 40px;
+	padding: 10px;
+	width: 300px;
+	border: 1px solid black;
+	box-shadow: 10px 10px 5px lightgrey;
+	border-radius: 10px;
+}
+#loginDialog p {
+	margin-top: -1em;
+	margin-left: 3px;
+	background-color: white;
+	display: block;
+	width: 50px;
+	text-align: center;
+}
+#loginDialog input {
+	margin-left:10px;
+	float: right;
+}
+#loginDialog table {
+	margin:auto;
+}
+#loggedIn {
+	width: 961px;
+	padding: 5px;
+	border: 1px solid black;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+#canvasDiv {
+	width: 850px;
+	height: 400px;
+	float: left;
+	padding: 0px;
+	border-left: 1px solid black;
+}
+
+#tools {
+	width: 110px;
+	height: 390px;
+	float: left;
+	padding: 5px;
+	border-left:1px solid black;
+	border-right:1px solid black;
+}
+
+#shapePicker {
+	border: 1px solid grey;
+	margin-top: 15px;
+}
+
+#shapePicker p {
+	margin-top: -0.5em;
+	margin-left: 3px;
+	background-color: white;
+	display: block;
+	width: 80px;
+	text-align: center;
+}
+
+#shapePicker input {
+	width: 95px;
+	margin: 6px;
+}
+
+#colorPicker {
+	border: 1px solid grey;
+	margin-top: 15px;
+}
+
+#colorPicker p {
+	margin-top: -0.5em;
+	margin-left: 3px;
+	background-color: white;
+	display: block;
+	width: 80px;
+		text-align: center;
+	
+}
+
+#colorPicker input {
+	width: 90px;
+	margin: 6px;
+}
+
+#or {
+	text-align: center;
+}
+
+#imagePicker {
+	border: 1px solid grey;
+	margin-top: 5px;
+}
+
+#imagePicker p {
+	margin-top: -0.5em;
+	margin-left: 3px;
+	background-color: white;
+	display: block;
+	width: 100px;
+	text-align: center;
+}
+
+#imagePicker input {
+	width: 90px;
+	margin: 6px;
+}
+
+#chatBox {
+	height: 175px;
+	width: 961px;
+	float: left;
+	padding: 5px;
+	overflow: scroll;
+	border: 1px solid black;
+}
+
+#textInputDiv {
+	float: left;
+	width: 961px;
+	padding: 5px;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#textInput {
+	width: 900px;
+}
