@@ -1,15 +1,26 @@
 //handles the client side login
 var username = document.getElementById("username");
 var password = document.getElementById("password");
+var update = document.getElementById("update");
 
 function login(){
-	//TODO: use ajax to make a database query to test whether
-	//The username or password is valid, if it is valid, move on
-	//to netpaint.html, otherwise return an error to the user saying
-	//that the username and password combination is invalid
-	
-	//move to netpaint.html
-	window.location.replace("netpaint.html");
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "login.php", true);
+	xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	//It's uber super secure to send plain text passwords over the network like this
+	xhttp.send("username="+username.value+"&password="+password.value);
+
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			var loggedIn = xhttp.responseText;
+			console.log(loggedIn);
+			if(loggedIn == 1){
+				window.location.replace("netpaint.html");
+			} else {
+				update.innerHTML = "Incorrect username and or password."
+			}
+		}
+	}
 }
 
 function create(){
