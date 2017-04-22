@@ -9,15 +9,15 @@
 	<div id="login">
 		<div id="loginDialog">
 			<p>Login</p>
-			<div id="loginForm">
+			<form id="loginForm" onsubmit="return false;">
 				<table>
 					<tr>
 						<td>Username</td>
-						<td><input id="username" type="text"></td>
+						<td><input id="username" type="text" required></td>
 					</tr>
 					<tr>
 						<td>Password</td>
-						<td><input id="password" type="password"></td>
+						<td><input id="password" type="password" required></td>
 					</tr>
 					<tr>
 						<td colspan="2">
@@ -26,12 +26,12 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="button" value="Login" onclick="login()">
-							<input type="button" value="Create" onclick="create()">
+							<input type="submit" value="Login" onclick="login()">
+							<input type="submit" value="Create" onclick="create()">
 						</td>
 					</tr>
 				</table>
-			</div>
+			</form>
 		</div>
 	</div>
 	<script type="text/javascript" src="login.js"></script>

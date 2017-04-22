@@ -21,6 +21,19 @@ class DatabaseAdaptor {
 		$stmt->execute ();
 		return count($stmt->fetchAll ( PDO::FETCH_ASSOC )) == 1;
 	}
+	
+	public function newAccount($username, $password){
+		while(true){
+			$id = rand(0,9999999);
+			$stmt = $this->DB->prepare ( "SELECT * FROM users WHERE ID ='".$id."'" );
+			$stmt->execute ();
+			if(count($stmt->fetchAll ( PDO::FETCH_ASSOC )) == 0){
+				$stmt = $this->DB->prepare ( "INSERT INTO users VALUES(".$id.", '".$username."', '".$password."')" );
+				$stmt->execute ();
+				return;
+			}
+		}
+	}
 
 	//returns userID if the username and password match, false otherwise
 	public function testUsernamePassword($username, $password){
