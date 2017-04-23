@@ -6,10 +6,11 @@ var paintObjects = []; // a list of paint objects
 var ghost; // a changing paint object
 var useGhost = false; // determines whether or not to use ghost
 var currentType = "rect"; // The currently selected type
-var argument = "#000000"; // the current argument for that type
+var argument = "#0000FF"; // the current argument for that type
 
 // the canvas to draw too
 var canvas = document.getElementById("canvas");
+var color = document.getElementById("color");
 canvas.width = 850;
 canvas.height = 400;
 var context = canvas.getContext("2d");
@@ -47,8 +48,10 @@ canvas.addEventListener("click", function(event) {
 canvas.addEventListener("mousemove", function(event){
 	if(useGhost){
 		var mousePosition = getMousePosition(event);
+		ghost.type = currentType;
 		ghost.x2 = mousePosition.x;
 		ghost.y2 = mousePosition.y;
+		ghost.argument = argument;
 		drawObjects();
 	}
 },false);
@@ -108,4 +111,12 @@ function draw(object) {
 			context.stroke();
 		}
 	}
+}
+
+function setType(newType){
+	currentType = newType;
+}
+
+function setColor(){
+	argument = color.value;
 }

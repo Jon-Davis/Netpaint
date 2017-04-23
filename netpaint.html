@@ -14,13 +14,13 @@
 		<div id="tools">
 			<div id="shapePicker">
 				<p>Pick a shape</p>
-				<input type="button" value="Rectangle">
-				<input type="button" value="Oval">
-				<input type="button" value="Line">
+				<input type="button" value="Rectangle" onclick="setType('rect')">
+				<input type="button" value="Oval" onclick="setType('oval')">
+				<input type="button" value="Line" onclick="setType('line')">
 			</div>
 			<div id="colorPicker">
 				<p>Pick a color</p>
-				<input type="color">
+				<input type="color" id="color" value="#0000FF" onchange="setColor()">
 			</div>
 			<div id="or">
 				--OR--
