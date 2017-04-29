@@ -17,7 +17,7 @@ function login(){
 			var loggedIn = xhttp.responseText;
 			console.log(loggedIn);
 			if(loggedIn == 1){
-				window.location.replace("netpaint.html");
+				window.location.replace("netpaint.php");
 			} else {
 				update.innerHTML = "Incorrect username and or password.";
 			}
@@ -39,7 +39,7 @@ function create(){
 			var loggedIn = xhttp.responseText;
 			console.log(loggedIn);
 			if(loggedIn == 1){
-				window.location.replace("netpaint.html");
+				window.location.replace("netpaint.php");
 			} else {
 				update.innerHTML = "User with that username already exists.";
 			}

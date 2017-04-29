@@ -7,7 +7,8 @@
 </head>
 <body>
 	<div id="container">
-		<div id="loggedIn">Logged in as:</div>
+	<?php session_start(); ?>
+		<div id="loggedIn">Logged in as: <?php echo $_SESSION["name"]?></div>
 		<div id="canvasDiv">
 			<canvas id="canvas"></canvas>
 		</div>
