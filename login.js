@@ -26,7 +26,7 @@ function login(){
 }
 
 function create(){
-	if(!validInput())
+	if(!validCreate())
 		return;
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("POST", "login.php", true);
@@ -52,4 +52,17 @@ function validInput(){
 		return true;
 	else
 		return false;
+}
+
+function validCreate(){
+	var logMsg = document.getElementById("loginDialog");
+	if (!username.value.length > 4){
+		logMsg.innerHTML = "Username must be greater than 4 characters";
+		return false;
+	}
+	if (!password.value.length > 6){
+		logMsg.innerHTML = "Password must be greater than 6 characters";
+		return false;
+	}
+	return true;
 }

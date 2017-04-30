@@ -2,7 +2,10 @@
 // Handles the server side login
 include 'DatabaseAdaptor.php';
 $username = $_POST ["username"];
+$username = htmlspecialchars($username);
 $password = $_POST ["password"];
+$password = htmlspecialchars($password);
+//$password = password_hash($password, PASSWORD_DEFAULT);
 $action = $_POST ["action"];
 if ($action == "login") {
 	$userID = $DBinstance->testUsernamePassword ( $username, $password );
