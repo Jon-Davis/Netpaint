@@ -93,9 +93,6 @@ function draw(object) {
 	var y2 = object.y2;
 	if (type == "image") {
 		context.drawImage(object.argument, x1, y1, x2 - x1, y2 - y1); // Or at
-		// whatever
-		// offset you
-		// like
 	} else {
 		// set the color of the object
 		context.fillStyle = object.argument;
@@ -105,7 +102,6 @@ function draw(object) {
 		} else if (type == "oval") {
 			var w = x2 - x1;
 			var h = y2 - y1;
-			console.log("printing oval " + w + " " + h);
 			var kappa = .5522848, ox = (w / 2) * kappa, oy = (h / 2) * kappa, xe = x1
 					+ w, ye = y1 + h, xm = x1 + w / 2, ym = y1 + h / 2;
 			context.beginPath();
@@ -148,6 +144,7 @@ function setColor() {
 }
 
 function updateServer(newObject) {
+	console.log(newObject);
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("POST", "draw.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -168,7 +165,6 @@ function updateCanvas() {
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			var objects = JSON.parse(xhttp.response);
-			console.log(objects);
 			paintObjects = [];
 			for (var i = 0; i < objects.length; i++) {
 				if (objects[i]["type"] != 'image') {
@@ -180,9 +176,8 @@ function updateCanvas() {
 					paintObjects.push(objects[i]);
 				}
 			}
-			console.log(paintObjects);
 			drawObjects();
 		}
 	}
 }
-updateCanvas();
+setInterval(function(){ updateCanvas(); drawObjects(); }, 100);

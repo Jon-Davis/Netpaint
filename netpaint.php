@@ -10,7 +10,8 @@
 	<?php session_start(); ?>
 		<div id="loggedIn">
 			Logged in as: <?php echo $_SESSION["name"]?>
-			<input id="logout" style="float:right" type="button" value="logout" onclick="logout()"> 
+			<input id="logout" style="float: right" type="button" value="logout"
+				onclick="logout()">
 		</div>
 		<div id="canvasDiv">
 			<canvas id="canvas"></canvas>
@@ -18,9 +19,10 @@
 		<div id="tools">
 			<div id="shapePicker">
 				<p>Pick a shape</p>
-				<input type="button" value="Rectangle" onclick="setType('rect')"> <input
-					type="button" value="Oval" onclick="setType('oval')"> <input
-					type="button" value="Line" onclick="setType('line')">
+				<input type="button" value="Rectangle" onclick="setType('rect')">
+				<!-- <input
+					type="button" value="Oval" onclick="setType('oval')"> -->
+				<input type="button" value="Line" onclick="setType('line')">
 			</div>
 			<div id="colorPicker">
 				<p>Pick a color</p>
@@ -41,14 +43,13 @@
 		<div id="chatBox"></div>
 		<div id="textInputDiv">
 			<form onsubmit="return sendMessage()">
-				<input type="text" id="textInput" /> 
-				<input type="submit" id="submitTextInput" value="Send"/>
+				<input type="text" id="textInput" /> <input type="submit"
+					id="submitTextInput" value="Send" />
 			</form>
 		</div>
 	</div>
 	<script type="text/javascript" src="draw.js"></script>
 	<script type="text/javascript" src="textChat.js"></script>
 	<script type="text/javascript" src="logout.js"></script>
-	<script type="text/javascript" src="message.js"></script>
 </body>
 </html>

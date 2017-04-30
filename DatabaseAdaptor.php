@@ -51,7 +51,21 @@ class DatabaseAdaptor {
 		else
 			return false;
 	}
+	public function addMessage($id, $message) {
+		$stmt = $this->DB->prepare ( "INSERT INTO messages (Author,Message) VALUES(:id,:message)" );
+		$stmt->bindParam ( ':message', $message, PDO::PARAM_STR, 255 );
+		$stmt->bindParam ( ':id', $id, PDO::PARAM_INT );
+		$stmt->execute ();
+	}
+	
+	public function getMessages(){
+		$stmt = $this->DB->prepare ( " SELECT users.Username,messages.Message FROM messages INNER JOIN users ON users.ID=messages.Author" );
+		$stmt->execute ();
+		return $stmt->fetchAll ( PDO::FETCH_ASSOC );
+	}
+	
 	public function addDrawingObject($object) {
+		
 		$stmt = $this->DB->prepare ( "INSERT INTO drawings (x1,y1,x2,y2,type,argument) VALUES(:x1,:y1,:x2,:y2,:type,:argument)" );
 		$stmt->bindParam ( ':x1', $object["x1"], PDO::PARAM_INT );
 		$stmt->bindParam ( ':y1', $object["y1"], PDO::PARAM_INT );

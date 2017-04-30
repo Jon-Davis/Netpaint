@@ -14,6 +14,7 @@ if ($action == "login") {
 		session_id($userID);
 		session_start();
 		$_SESSION["name"] = $username;
+		$_SESSION["id"] = $userID;
 		echo true;
 	}
 } else if ($action == "create") {
@@ -22,6 +23,7 @@ if ($action == "login") {
 		session_id($userID);
 		session_start();
 		$_SESSION["name"] = $username;
+		$_SESSION["id"] = $userID;
 		echo true;
 	} else {
 		echo false;
