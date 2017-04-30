@@ -32,12 +32,12 @@ DROP TABLE IF EXISTS `drawings`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `drawings` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `x1` decimal(8,8) DEFAULT NULL,
-  `y1` decimal(8,8) DEFAULT NULL,
-  `x2` decimal(8,8) DEFAULT NULL,
-  `y2` decimal(8,8) DEFAULT NULL,
-  `argument` varchar(2048) DEFAULT NULL,
+  `x1` int(11) DEFAULT NULL,
+  `y1` int(11) DEFAULT NULL,
+  `x2` int(11) DEFAULT NULL,
+  `y2` int(11) DEFAULT NULL,
   `type` varchar(64) DEFAULT NULL,
+  `argument` varchar(2048) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-29 20:32:07
+-- Dump completed on 2017-04-29 20:52:48

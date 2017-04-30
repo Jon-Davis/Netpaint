@@ -49,5 +49,6 @@
 	<script type="text/javascript" src="draw.js"></script>
 	<script type="text/javascript" src="textChat.js"></script>
 	<script type="text/javascript" src="logout.js"></script>
+	<script type="text/javascript" src="message.js"></script>
 </body>
 </html>
