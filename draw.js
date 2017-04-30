@@ -80,10 +80,11 @@ function draw(object) {
 	var x2 = object.x2;
 	var y2 = object.y2;
 	if (type == "image") {
-		
+		context.drawImage(object.argument,x1,y1,x2-x1,y2-y1); // Or at whatever offset you like
 	} else {
 		// set the color of the object
 		context.fillStyle = object.argument;
+		context.strokeStyle = object.argument;
 		if (type == "rect") {
 			context.fillRect(x1,y1,x2-x1,y2-y1);
 		} else if (type == "oval") {
@@ -113,8 +114,22 @@ function draw(object) {
 	}
 }
 
-function setType(newType){
+function customImage(){
+	var url = prompt("Please enter a url for your image");
+    if (url != null || url != "") {
+        setType('image',url);
+    }
+}
+
+function setType(newType, url){
 	currentType = newType;
+	if(currentType == 'image'){
+		var img = new Image;
+		img.src = url;
+		argument = img;
+	} else {
+		setColor();
+	}
 }
 
 function setColor(){

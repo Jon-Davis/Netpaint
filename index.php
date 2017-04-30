@@ -6,6 +6,12 @@
 <link href="styles.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+	<?php
+	session_start();
+	if (isset($_SESSION["name"])) {
+		header('Location: netpaint.php');
+	}
+	?>
 	<div id="login">
 		<div id="loginDialog">
 			<p>Login</p>
