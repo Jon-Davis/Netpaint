@@ -24,52 +24,31 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `netpaint` /*!40100 DEFAULT CHARACTER S
 USE `netpaint`;
 
 --
--- Table structure for table `contribution`
+-- Table structure for table `drawings`
 --
 
-DROP TABLE IF EXISTS `contribution`;
+DROP TABLE IF EXISTS `drawings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `contribution` (
-  `Contribution_ID` int(11) DEFAULT NULL,
-  `X1` decimal(16,8) DEFAULT NULL,
-  `Y1` decimal(16,8) DEFAULT NULL,
-  `X2` decimal(16,8) DEFAULT NULL,
-  `Y2` decimal(16,8) DEFAULT NULL
+CREATE TABLE `drawings` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `x1` decimal(8,8) DEFAULT NULL,
+  `y1` decimal(8,8) DEFAULT NULL,
+  `x2` decimal(8,8) DEFAULT NULL,
+  `y2` decimal(8,8) DEFAULT NULL,
+  `argument` varchar(2048) DEFAULT NULL,
+  `type` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `contribution`
+-- Dumping data for table `drawings`
 --
 
-LOCK TABLES `contribution` WRITE;
-/*!40000 ALTER TABLE `contribution` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contribution` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `contributiontypes`
---
-
-DROP TABLE IF EXISTS `contributiontypes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `contributiontypes` (
-  `Contribution_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Contributor` int(11) DEFAULT NULL,
-  `Type` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Contribution_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `contributiontypes`
---
-
-LOCK TABLES `contributiontypes` WRITE;
-/*!40000 ALTER TABLE `contributiontypes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contributiontypes` ENABLE KEYS */;
+LOCK TABLES `drawings` WRITE;
+/*!40000 ALTER TABLE `drawings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `drawings` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -105,8 +84,8 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `ID` int(11) DEFAULT NULL,
-  `Username` varchar(20) DEFAULT NULL,
-  `Password` varchar(20) DEFAULT NULL
+  `Username` varchar(255) DEFAULT NULL,
+  `Password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,7 +95,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'chris','1'),(22,'devon','22'),(333,'river','333');
+INSERT INTO `users` VALUES (2941589,'river','$2y$10$UFSVoPGbkWW786MVGHe5Bu4UBrYbRX.FespmrbiQTo08hVf085vku'),(4317321,'devon','$2y$10$Z6/isE1KUZt5MrmoC8cuD.6bIS5ljD.B4h0557l8YeF9BHg6dMHZK'),(2636718,'chris','$2y$10$yXDUu/21SPgQSeZp89tntuU9bsA9MhfazUznmy/RRMEOFUbbNKTsS');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-22  0:24:17
+-- Dump completed on 2017-04-29 20:32:07

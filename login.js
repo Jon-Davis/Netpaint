@@ -9,7 +9,6 @@ function login(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("POST", "login.php", true);
 	xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	//It's uber super secure to send plain text passwords over the network like this
 	xhttp.send("username="+username.value+"&password="+password.value+"&action=login");
 
 	xhttp.onreadystatechange = function() {
@@ -31,7 +30,6 @@ function create(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("POST", "login.php", true);
 	xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	//It's uber super secure to send plain text passwords over the network like this
 	xhttp.send("username="+username.value+"&password="+password.value+"&action=create");
 
 	xhttp.onreadystatechange = function() {
@@ -55,13 +53,12 @@ function validInput(){
 }
 
 function validCreate(){
-	var logMsg = document.getElementById("loginDialog");
-	if (!username.value.length > 4){
-		logMsg.innerHTML = "Username must be greater than 4 characters";
+	if (username.value.length <= 4){
+		update.innerHTML = "Username must be greater than 4 characters";
 		return false;
 	}
-	if (!password.value.length > 6){
-		logMsg.innerHTML = "Password must be greater than 6 characters";
+	if (password.value.length <= 6){
+		update.innerHTML = "Password must be greater than 6 characters";
 		return false;
 	}
 	return true;
